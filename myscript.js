@@ -8,6 +8,7 @@ let button = document.getElementById("button");
 let sel = document.getElementById("type");
 let amount = document.getElementById("input");
     let type = document.getElementById("type");
+    let summery = document.getElementById("summery");
 let addTransaction = (amount,type) =>{
     if(type == 'income')
     {
@@ -29,6 +30,7 @@ let dateString = m.getUTCFullYear() +"/"+ (m.getUTCMonth()+1) +"/"+ m.getUTCDate
        let bal = document.getElementById("bal");
        bal.innerHTML = balance;
        displayChart(income,expense,investments);
+       summery.innerHTML = `your blance is <i class="income">${balance}</i> and total expense is <i class="expense">${expense}</i>`;
     }
     else if(type == 'investment'){
         investments += parseInt(amount);
@@ -47,6 +49,7 @@ let dateString = m.getUTCFullYear() +"/"+ (m.getUTCMonth()+1) +"/"+ m.getUTCDate
        cell4.innerHTML  = amount;
        bal.innerHTML = balance;
        displayChart(income,expense,investments);
+       summery.innerHTML = `your blance is <i class="income">${balance}</i> and total expense is <i class="expense">${expense}</i>`;
         //alert(`${amount} has been debited from your account and your total is ${income}`);
     }
     else{
@@ -66,6 +69,7 @@ let dateString = m.getUTCFullYear() +"/"+ (m.getUTCMonth()+1) +"/"+ m.getUTCDate
        cell4.innerHTML  = amount;
        bal.innerHTML = balance;
        displayChart(income,expense,investments);
+       summery.innerHTML = `your blance is <i class="income">${balance}</i> and total expense is <i class="expense">${expense}</i>`;
         //alert(`${amount} has been debited from your account and your total is ${income}`);
     }
 }
@@ -131,7 +135,7 @@ function demoFromHTML() {
     var sTable = document.getElementById('items').innerHTML;
 
         var style = "<style>";
-        style = style + "table {width: 100%;font: 17px Calibri;}";
+        style = style + " .expense{color: red;} .income{ color:green;} .investment{ color: gold;} table {width: 100%;font: 17px Calibri;}";
         style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
         style = style + "padding: 2px 3px;text-align: center;}";
         style = style + "</style>";
